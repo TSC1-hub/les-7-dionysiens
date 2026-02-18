@@ -1,194 +1,310 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projet FIVA - les 7 DIONYSIENS</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-<style>
-/* Style rigoureusement identique au modèle */
-* { box-sizing: border-box; }
-body { margin: 0; font-family: 'Poppins', sans-serif; background: #fff; color: #333; }
-header { background: #5e73ff; color: white; padding: 60px 20px; text-align: center; }
-header h1 { font-size: 3em; margin: 0; }
-header h2 { font-weight: 300; margin-top: 10px; }
-section { padding: 50px 20px; max-width: 1000px; margin: auto; border-bottom: 1px solid #eee; }
-h3 { color: #ff725e; font-size: 1.5em; border-left: 5px solid #ff725e; padding-left: 15px; }
-.odd { background-color: #1a5e20; color: white; padding: 20px; border-radius: 10px; margin-top: 30px; }
-.business { background-color: #003366; color: white; padding: 25px; border-radius: 10px; margin-top: 30px; }
-img { max-width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-top: 10px; background: #f9f9f9; display: block; margin-left: auto; margin-right: auto; }
-.photo-container { text-align: center; margin-bottom: 20px; }
-footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 50px; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet FIVA - les 7 DIONYSIENS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- STYLE GLOBAL --- */
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: #5e73ff;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        header h1 { font-size: 3em; margin: 0; }
+        header h2 { font-weight: 300; margin-top: 10px; }
 
-/* Styles spécifiques pour le Pitch segmenté */
-.speaker-box { margin-bottom: 15px; padding: 20px; border-radius: 12px; border-left: 8px solid; box-shadow: 0 2px 5px rgba(0,0,0,0.05); color: #333; }
-.speaker-name { font-weight: 600; text-transform: uppercase; font-size: 0.9em; margin-bottom: 5px; display: block; }
-.bintou { background: #f0f4ff; border-color: #5e73ff; }
-.mehdi { background: #fff5f0; border-color: #ff725e; }
-.inaya { background: #f0fff4; border-color: #2ecc71; }
-.wissem { background: #fdf0ff; border-color: #9b59b6; }
-.ibrahim { background: #fffdf0; border-color: #f1c40f; }
-.slogan-final { font-weight: 600; color: #ff725e; font-size: 1.2em; margin-top: 10px; display: block; text-align: center; }
-</style>
+        section {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: auto;
+            border-bottom: 1px solid #eee;
+        }
+
+        h3 {
+            color: #ff725e;
+            font-size: 1.5em;
+            border-left: 5px solid #ff725e;
+            padding-left: 15px;
+            margin-bottom: 30px;
+        }
+
+        /* --- BLOCS SPECIFIQUES --- */
+        .odd {
+            background-color: #1a5e20;
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .business {
+            background-color: #003366;
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        /* --- IMAGES --- */
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-top: 10px;
+            background: #f9f9f9;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .photo-container { text-align: center; margin-bottom: 30px; }
+        
+        .placeholder-img {
+            width: 100%;
+            height: 200px;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #ccc;
+            color: #999;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        /* --- STYLES DU PITCH (ETAPE 4) --- */
+        .pitch-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .speaker-box {
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 8px solid rgba(0,0,0,0.2);
+        }
+        .speaker-name {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-size: 0.85em;
+        }
+        /* Couleurs par intervenant */
+        .bintou { background-color: #e3f2fd; border-color: #2196f3; }
+        .mehdi { background-color: #f1f8e9; border-color: #8bc34a; }
+        .inaya { background-color: #fff3e0; border-color: #ff9800; }
+        .wissem { background-color: #f3e5f5; border-color: #9c27b0; }
+        .ibrahim { background-color: #fce4ec; border-color: #e91e63; }
+        
+        .slogan-final {
+            display: block;
+            margin-top: 15px;
+            font-style: italic;
+            font-weight: 600;
+            color: #d32f2f;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
 
 <header>
-<h1>les 7 DIONYSIENS</h1>
-<h2>Un projet de l'équipe les 7 DIONYSIENS - Collège Iqbal Masih</h2>
+    <h1>les 7 DIONYSIENS</h1>
+    <h2>Un projet de l'équipe les 7 DIONYSIENS - Collège Iqbal Masih</h2>
 </header>
 
-<section>
-<h3>Étape 0 – Se préparer : Charte et Rôles</h3>
-<div id="regles_groupe">
-<h4>Nos règles de vie :</h4>
-<ul>
-<li>Se respecter (ne pas s'insulter)</li>
-<li>Communiquer et S'investir</li>
-<li>Prendre les décisions collectivement</li>
-</ul>
-</div>
-<div id="roles_groupe" style="margin-top: 20px;">
-<h4>Nos rôles :</h4>
-<ul>
-<li><strong>Wissem et Inaya :</strong> Assemblage | <strong>Ibrahim et Mehdy :</strong> Laser</li>
-<li><strong>Bintou et Hedi :</strong> Coupe | <strong>Hedi :</strong> Maître du Temps</li>
-<li><strong>Mehdy :</strong> Maître de la Consigne</li>
-</ul>
-</div>
-</section>
+<section id="etape0">
+    <h3>Étape 0 – Se préparer : Élaborer une charte de groupe</h3>
+    <p>🎯 <strong>Objectif :</strong> Construire notre boîte à outils et définir nos règles.</p>
 
-<section>
-<h3>Étape 1 - Se Questionner : Présentation de la problématique</h3>
-<div class="business">
-<h4>🚀 Le Défi TSC</h4>
-<p><strong>Comment rendre vivable et soutenable la vie des riverain.ne.s dans l'espace public en 2035 ?</strong></p>
-<img src="photo3.jpg" alt="Illustration de la problématique">
-</div>
-
-<div class="photo-container" style="margin-top: 30px;">
-<h4>😈 Notre Anti-Projet (Le pire projet possible)</h4>
-<img src="photo2.jpg" alt="Maquette Anti-Projet">
-<p><em>"Notre Anti-Projet : Une ville maudite où tout a disparu. Pour piéger les plus fragiles, nous avons conçu le 'Recul-O-Matic' : un faux passage piéton en trompe-l’œil qui fait reculer les gens. La structure en métal miroir décuple la chaleur et le moteur à pétrole renvoie sa fumée au visage des usagers."</em></p>
-</div>
-</section>
-
-<section>
-<h3>Étape 2 - Concevoir : Le FIVA</h3>
-<div style="text-align: center; margin-bottom: 30px;">
-    <img src="logo-fiva.png" alt="Logo FIVA" style="max-width: 250px; border: none; box-shadow: none;">
-    <p style="font-style: italic; color: #666;">"FIVA : Fauteuil pour l'Inclusion et la Vie Autonome"</p>
-</div>
-<div class="odd">
-    <h4>💡 Notre Projet : FIVA</h4>
-    <p><strong>QUOI :</strong> Fauteuil autonome, solaire et rafraîchissant pour les seniors, PMR et femmes enceintes.</p>
-    <p><strong>COMMENT :</strong> Équipé de panneaux solaires, brumisateur, prises USB, tissus confortables et ceintures de sécurité.</p>
-</div>
-<div style="display: flex; justify-content: space-around; margin-top: 20px; flex-wrap: wrap;">
-    <div style="flex: 1; min-width: 300px; padding: 10px;"><h4>Vue de Face</h4><img src="fiva-face.jpg"></div>
-    <div style="flex: 1; min-width: 300px; padding: 10px;"><h4>Vue de Profil</h4><img src="fiva-profil.jpg"></div>
-</div>
-</section>
-
-<section>
-<h3>Étape 3 - Prototyper la solution (Le Chantier)</h3>
-<div class="photo-container">
-<h4>🏗️ Notre Réalisation Finale</h4>
-<p><strong>Notre ressenti :</strong> 
-    <span style="color: #666; font-style: italic;">Nous sommes fiers d'avoir construit ce prototype qui prouve que l'on peut allier technologie solaire et aide aux personnes les plus vulnérables. Passer du dessin à la réalité a été un vrai défi pour l'équipe !</span>
-</p>
-
-<div style="display: flex; justify-content: space-around; margin-top: 20px; flex-wrap: wrap;">
-    <div style="flex: 1; min-width: 300px; padding: 10px;">
-        <h4>Vue du prototype 1</h4>
-        <img src="vue-de-cote-1.jpg" alt="Prototype FIVA">
+    <div class="photo-container">
+        <h4>Notre Boîte à Outils & L'Équipe</h4>
+        <img src="tool-kit-photo.jpeg" alt="Photo du groupe et de la boîte à outils">
     </div>
-    <div style="flex: 1; min-width: 300px; padding: 10px;">
-        <h4>Vue du prototype 2</h4>
-        <img src="vue-de-cote-2.jpg" alt="Prototype FIVA détails">
-    </div>
-</div>
-</div>
-</section>
 
-<section>
-<h3>Étape 4 - Planifier & Présenter : LE PITCH</h3>
-<div class="business">
-<h4>💼 Business Plan & Impacts ODD</h4>
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
-    <div style="flex: 1; min-width: 280px;">
-        <p><strong>💰 Chiffres Financiers :</strong></p>
+    <div id="regles_groupe">
+        <h4>Nos règles de vie :</h4>
         <ul>
-            <li>Production : 1 000€ / unité | Lancement : 60 000€.</li>
-            <li>Abonnement : 5,20€/mois | Location : 3€/h.</li>
+            <li>Se respecter (ne pas s'insulter)</li>
+            <li>Communiquer</li>
+            <li>S'investir</li>
+            <li>S'écouter</li>
+            <li>Prendre les décisions collectivement</li>
         </ul>
     </div>
-    <div style="flex: 1; min-width: 280px;">
-        <p><strong>🌍 Impacts ODD :</strong></p>
+
+    <div id="roles_groupe" style="margin-top: 20px;">
+        <h4>Nos rôles :</h4>
         <ul>
-            <li><strong>ODD 3 :</strong> Santé & Protection thermique.</li>
-            <li><strong>ODD 7 :</strong> Énergie Solaire (0 émission).</li>
-            <li><strong>ODD 10 :</strong> Inclusion des personnes fragiles.</li>
+            <li><strong>Wissem et Inaya :</strong> Assemblage</li>
+            <li><strong>Ibrahim et Mehdy :</strong> Laser</li>
+            <li><strong>Bintou et Hedi :</strong> Coupe</li>
+            <li><strong>Hedi :</strong> Maître du Temps</li>
+            <li><strong>Mehdi :</strong> Maître de la Consigne</li>
         </ul>
     </div>
-</div>
-</div>
-
-<div class="pitch-container" style="margin-top: 30px;">
-    <div class="speaker-box bintou">
-        <span class="speaker-name">Bintou</span>
-        Bonjour, nous sommes Inaya, Wissem, Bintou, Hedi, Ibrahim et Mehdy du collège Iqbal Masih, et nous formons le groupe des 7 Dionysiens (même si on est que 6). Nous allons vous présenter le <strong>FIVA</strong> : le Fauteuil pour l'Inclusion et la Vie Autonome.
-    </div>
-
-    <div class="speaker-box mehdi">
-        <span class="speaker-name">Mehdi</span>
-        Imaginez que nous sommes à l'été 2035. Il fait chaud, le thermomètre dépasse les 45°, vous avez la bouche pâteuse et peu d'énergie. Vous devez aller au travail, mais une personne vulnérable de votre entourage doit se déplacer. Grâce à FIVA, cela est possible, et même en temps de canicule, toutes les femmes enceintes, les personnes handicapées et les personnes âgées pourront se déplacer sans souci.
-    </div>
-
-    <div class="speaker-box inaya">
-        <span class="speaker-name">Inaya</span>
-        Le Fiva est un fauteuil inclusif qui permet aux personnes vulnérables de se déplacer librement. C'est comme un "vélib'", mais en mieux, car il est éco-responsable, confortable, inclusif et construit avec des matériaux renouvelables. Il est équipé de roues, d'une assise avec un coussin, des prises électriques, un brumisateur, de tissus et de ceintures de sécurité. De plus, le FIVA respecte 13 objectifs de développement durable.
-    </div>
-
-    <div class="speaker-box wissem">
-        <span class="speaker-name">Wissem</span>
-        Nous avons imaginé une solution unique pour accompagner la mobilité des plus fragiles. C'est le premier transport en commun 100% inclusif et écologique. Grâce à FIVA, les personnes handicapées, les femmes enceintes et les personnes âgées peuvent se déplacer de façon autonome.
-    </div>
-
-    <div class="speaker-box ibrahim">
-        <span class="speaker-name">Ibrahim</span>
-        Nous allons d'abord développer ce projet dans notre ville, Saint-Denis. L'objectif est d'en construire 70 afin de relier les 6 quartiers de la Ville. Au bout de 3 ans, nous allons nous étendre à tout le département du 93, avec 700 FIVA. Au bout de 5 ans, nous allons équiper toute la région Île-de-France avec 10 000 fauteuils.
-    </div>
-
-    <div class="speaker-box bintou">
-        <span class="speaker-name">Bintou</span>
-        Un FIVA coûtant 1000€ pour la construction et la main-d'œuvre, nous avons besoin de 60k pour la 1ère année.
-    </div>
-
-    <div class="speaker-box mehdi">
-        <span class="speaker-name">Mehdy</span>
-        Afin de dégager des bénéfices, nous allons proposer un abonnement mensuel à 5,20€, ou des locations à 3€ la première heure puis 2€ la deuxième. Afin de financer le projet, nous avons aussi des partenariats avec la RATP, le site Ameli.fr, la Ville de Saint-Denis, des associations et JP Morgan. Nous pourrons également faire de la publicité dans les hôpitaux et sur les réseaux sociaux.
-        <span class="slogan-final">"Fiva est essentiel pour le futur, y'a que fiva qui va !"</span>
-    </div>
-
-    <div class="speaker-box bintou">
-        <span class="speaker-name">Bintou</span>
-        Nous comptons sur vous pour soutenir ce projet d'intérêt public, qui permet de lutter contre les inégalités et propose un mode de transport durable. <strong>Viva le Fiva !</strong>
-    </div>
-</div>
+    <p>✅ Charte et Boîte à outils validées ! 🌟</p>
 </section>
 
-<section>
-<h3>Étape 5 - Convaincre : Product Box</h3>
-<div class="odd" style="text-align: center;">
-<h4>📦 Notre Product Box FIVA</h4>
-<h5 style="font-size: 1.5em; margin: 10px 0;">"Y'a que Fiva qui va !"</h5>
-<p><strong>Bénéfices :</strong> Inclusivité - Énergie Solaire - Protection Thermique</p>
-</div>
+<section id="etape1">
+    <h3>Étape 1 - Se Questionner : Présentation de la problématique</h3>
+    <div class="business">
+        <h4>🚀 Le Défi TSC</h4>
+        <p><strong>Comment rendre vivable et soutenable la vie des riverain.ne.s dans l'espace public en 2035 ?</strong></p>
+    </div>
+
+    <div class="photo-container" style="margin-top: 30px;">
+        <h4>😈 Notre Anti-Projet (Le pire projet possible)</h4>
+        <img src="photo2.jpg" alt="Maquette Anti-Projet">
+        <p style="margin-top:15px;"><em>"Une ville maudite où tout a disparu : lampadaires, bancs, arbres. Nous avons conçu le 'Recul-O-Matic' pour piéger les plus fragiles."</em></p>
+    </div>
+</section>
+
+<section id="etape2">
+    <h3>Étape 2 - Concevoir : Définir et Maquetter</h3>
+
+    <div style="text-align: center; margin-bottom: 30px;">
+        <img src="logo-banc.png" alt="Logo FIVA" style="max-width: 250px; border: none; box-shadow: none;">
+        <p style="font-style: italic; color: #666; margin-top: 10px;">"Prenez soin de vous, il s'occupe du reste"</p>
+    </div>
+
+    <div class="odd">
+        <h4>💡 Notre Projet : Le FIVA</h4>
+        <p><strong>QUI :</strong> Citadins, seniors, PMR et femmes enceintes.</p>
+        <p><strong>QUOI :</strong> Fauteuil pour l'Inclusion et la Vie Autonome. Un transport autonome, écologique et solidaire.</p>
+        <p><strong>COMMENT :</strong> 
+            <ul>
+                <li>Panneaux solaires et propulsion électrique.</li>
+                <li>Brumisateur intégré et confort thermique.</li>
+                <li>Prises USB et ceintures de sécurité.</li>
+                <li>Matériaux éco-responsables.</li>
+            </ul>
+        </p>
+    </div>
+
+    <div style="display: flex; justify-content: space-around; margin-top: 20px; flex-wrap: wrap; gap: 10px;">
+        <div style="flex: 1; min-width: 250px;">
+            <h4>Vue de Face</h4>
+            <img src="banc-face.jpg" alt="Vue de face">
+        </div>
+        <div style="flex: 1; min-width: 250px;">
+            <h4>Vue de Profil</h4>
+            <img src="banc-profil.jpg" alt="Vue de profil">
+        </div>
+    </div>
+</section>
+
+<section id="etape3">
+    <h3>Étape 3 - Prototyper la solution (Le Chantier)</h3>
+    <div class="photo-container">
+        <h4>🏗️ Notre Réalisation Finale</h4>
+        <div style="display: flex; justify-content: space-around; margin-top: 20px; flex-wrap: wrap; gap: 15px;">
+            <img src="vue-de-cote-1.jpg" alt="Prototype 1" style="width: 45%;">
+            <img src="vue-de-cote-2.jpg" alt="Prototype 2" style="width: 45%;">
+        </div>
+    </div>
+</section>
+
+<section id="etape4">
+    <h3>Étape 4 - Planifier & Présenter : LE PITCH</h3>
+    <div class="business">
+        <h4>💼 Business Plan & Impacts ODD</h4>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
+            <div style="flex: 1; min-width: 280px;">
+                <p><strong>💰 Chiffres Financiers :</strong></p>
+                <ul>
+                    <li>Production : 1 000€ / unité</li>
+                    <li>Lancement : 60 000€</li>
+                    <li>Abonnement : 5,20€/mois | Location : 3€/h</li>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 280px;">
+                <p><strong>🌍 Impacts ODD :</strong></p>
+                <ul>
+                    <li><strong>ODD 3 :</strong> Santé & Protection thermique</li>
+                    <li><strong>ODD 7 :</strong> Énergie Solaire (0 émission)</li>
+                    <li><strong>ODD 10 :</strong> Inclusion des plus fragiles</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="pitch-container">
+        <div class="speaker-box bintou">
+            <span class="speaker-name">Bintou</span>
+            Bonjour, nous sommes Inaya, Wissem, Bintou, Hedi, Ibrahim et Mehdy du collège Iqbal Masih, et nous formons le groupe des 7 Dionysiens. Nous allons vous présenter le <strong>FIVA</strong> : le Fauteuil pour l'Inclusion et la Vie Autonome.
+        </div>
+
+        <div class="speaker-box mehdi">
+            <span class="speaker-name">Mehdi</span>
+            Imaginez que nous sommes à l'été 2035. Il fait chaud, le thermomètre dépasse les 45°. Grâce à FIVA, toutes les femmes enceintes, les personnes handicapées et les personnes âgées pourront se déplacer sans souci, même en pleine canicule.
+        </div>
+
+        <div class="speaker-box inaya">
+            <span class="speaker-name">Inaya</span>
+            Le Fiva est comme un "vélib'", mais en mieux : éco-responsable, confortable et construit avec des matériaux renouvelables. Il est équipé de roues, d'un brumisateur, de prises électriques et de ceintures de sécurité.
+        </div>
+
+        <div class="speaker-box wissem">
+            <span class="speaker-name">Wissem</span>
+            Nous avons imaginé une solution unique. C'est le premier transport en commun 100% inclusif et écologique pour accompagner la mobilité des plus fragiles de façon autonome.
+        </div>
+
+        <div class="speaker-box ibrahim">
+            <span class="speaker-name">Ibrahim</span>
+            Nous lancerons 70 FIVA à Saint-Denis pour relier les 6 quartiers. Au bout de 5 ans, nous prévoyons d'équiper toute la région Île-de-France avec 10 000 fauteuils.
+        </div>
+
+        <div class="speaker-box bintou">
+            <span class="speaker-name">Bintou</span>
+            Un FIVA coûte 1000€ à construire. Nous avons besoin de 60 000€ pour lancer la première année.
+        </div>
+
+        <div class="speaker-box mehdi">
+            <span class="speaker-name">Mehdy</span>
+            Nous proposons un abonnement à 5,20€ ou de la location horaire. Nos partenaires incluent la RATP, Ameli.fr et la Ville de Saint-Denis. 
+            <span class="slogan-final">"Fiva est essentiel pour le futur, y'a que fiva qui va !"</span>
+        </div>
+
+        <div class="speaker-box bintou">
+            <span class="speaker-name">Bintou</span>
+            Nous comptons sur vous pour soutenir ce projet d'intérêt public. <strong>Viva le Fiva !</strong>
+        </div>
+    </div>
+</section>
+
+<section id="etape5">
+    <h3>Étape 5 - Convaincre : Éloquence & Product Box</h3>
+    <div class="odd" style="text-align: center;">
+        <h4>📦 Notre Product Box</h4>
+        <h5 style="font-size: 1.2em; margin: 10px 0;">"FIVA : La liberté de bouger, le confort de respirer"</h5>
+        <div class="placeholder-img">[Photo Product Box]</div>
+    </div>
+    <p style="margin-top: 30px; font-size: 1.2em; text-align: center;">🚀 <strong>Nous sommes prêts pour la FINALE !</strong> 🚀</p>
 </section>
 
 <footer>
-<p>Projet FIVA - les 7 DIONYSIENS © 2026</p>
+    <p>Projet réalisé au Collège Iqbal Masih - les 7 DIONYSIENS © 2026</p>
 </footer>
 
 </body>
